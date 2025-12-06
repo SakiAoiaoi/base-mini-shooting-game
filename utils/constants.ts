@@ -1,2 +1,2 @@
 // base sepoliaにデプロイしたシューティングゲームNFT
-export const NFT_ADDRESS = '0x159D90cFa7f5efF4c1b8EBBea18504A3a69BdDf1';
+export const NFT_ADDRESS = '0xBa776978480ae4F5adE4134D50806A6808b655D5';
