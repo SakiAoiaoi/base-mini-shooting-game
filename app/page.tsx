@@ -1,3 +1,5 @@
+// app/page.tsx
+
 'use client';
 
 // MiniKit の各種フックを用いたメインの画面コンポーネント。
@@ -7,6 +9,8 @@
 
 import { Footer, Header } from '@/components/common';
 import { Home } from '@/components/DemoComponents';
+import { useMiniKit } from '@coinbase/onchainkit/minikit';
+import { useEffect } from 'react';
 
 /**
  * App コンポーネント
@@ -14,6 +18,13 @@ import { Home } from '@/components/DemoComponents';
  */
 export default function App() {
   // MiniKit のコンテキスト（フレーム準備完了フラグやクライアント状態）
+  const { setFrameReady, isFrameReady } = useMiniKit();
+
+  useEffect(() => {
+    if (!isFrameReady) {
+      setFrameReady();
+    }
+  }, [setFrameReady, isFrameReady]);
 
   return (
     <div className="mini-app-theme flex min-h-screen flex-col from-[var(--app-background)] to-[var(--app-gray)] font-sans text-[var(--app-foreground)]">
