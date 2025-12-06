@@ -57,7 +57,8 @@ export async function GET() {
     baseBuilder: {
       // Base Buildに登録する際に必要となる(自分のFarcasterアカウントのウォレットアドレスを設定する)
       // このアプリを編集・管理できるFarcasterアカウントに紐づくウォレットアドレス
-      allowedAddresses: ['<ここにFarcasterアカウントに紐づくウォレットアドレスを記載する>'],
+      allowedAddresses: ['0x04660c055777aB978E7D9254393c17469FdB012E'],
     },
   });
 }
+
