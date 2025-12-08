@@ -1,0 +1,14 @@
+{
+    "accountAssociation": {
+      "header": "eyJmaWQiOjE5MzMzOCwidHlwZSI6ImF1dGgiLCJrZXkiOiIweDA0NjYwYzA1NTc3N2FCOTc4RTdEOTI1NDM5M2MxNzQ2OUZkQjAxMkUifQ",
+      "payload": "eyJkb21haW4iOiJiYXNlLW1pbmktc2hvb3RpbmctZ2FtZS1laWdodC52ZXJjZWwuYXBwIn0",
+      "signature": "riHHjw0S2dJqjdm2wX/RkUAnDkfni+XiGVp+mpo3Cj1spQRQQIvyPQ7sZhdExiM+zDKXPyTk+6+MsfoaVkvsrhs="
+    },
+    "miniapp": {
+      "version": "1",
+      "name": "Base Mini Shooting Game",
+      "iconUrl": "https://base-mini-shooting-game-eight.vercel.app/icon.png",
+      "homeUrl": "https://base-mini-shooting-game-eight.vercel.app/"
+    }
+  }
+  
