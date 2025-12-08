@@ -6,7 +6,9 @@
  * @param properties - クリーニング対象のプロパティを持つオブジェクト
  * @returns - 有効なプロパティのみを持つ新しいオブジェクト
  */
-function withValidProperties(properties: Record<string, undefined | string | string[]>) {
+function withValidProperties(
+  properties: Record<string, undefined | string | string[]>
+) {
   return Object.fromEntries(
     Object.entries(properties).filter(([key, value]) => {
       if (Array.isArray(value)) {
@@ -29,13 +31,16 @@ export async function GET() {
   return Response.json({
     // Farcasterアカウントの関連付け情報
     accountAssociation: {
-      header: process.env.FARCASTER_HEADER,
-      payload: process.env.FARCASTER_PAYLOAD,
-      signature: process.env.FARCASTER_SIGNATURE,
+      header:
+        "eyJmaWQiOjE5MzMzOCwidHlwZSI6ImF1dGgiLCJrZXkiOiIweDA0NjYwYzA1NTc3N2FCOTc4RTdEOTI1NDM5M2MxNzQ2OUZkQjAxMkUifQ",
+      payload:
+        "eyJkb21haW4iOiJiYXNlLW1pbmktc2hvb3RpbmctZ2FtZS1laWdodC52ZXJjZWwuYXBwIn0",
+      signature:
+        "riHHjw0S2dJqjdm2wX/RkUAnDkfni+XiGVp+mpo3Cj1spQRQQIvyPQ7sZhdExiM+zDKXPyTk+6+MsfoaVkvsrhs=",
     },
     // Farcasterフレームのメタデータ
     frame: withValidProperties({
-      version: '1',
+      version: "1",
       name: process.env.NEXT_PUBLIC_ONCHAINKIT_PROJECT_NAME,
       subtitle: process.env.NEXT_PUBLIC_APP_SUBTITLE,
       description: process.env.NEXT_PUBLIC_APP_DESCRIPTION,
@@ -57,8 +62,7 @@ export async function GET() {
     baseBuilder: {
       // Base Buildに登録する際に必要となる(自分のFarcasterアカウントのウォレットアドレスを設定する)
       // このアプリを編集・管理できるFarcasterアカウントに紐づくウォレットアドレス
-      allowedAddresses: ['0x04660c055777aB978E7D9254393c17469FdB012E'],
+      allowedAddresses: ["0x04660c055777aB978E7D9254393c17469FdB012E"],
     },
   });
 }
-
